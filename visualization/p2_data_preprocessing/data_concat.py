@@ -21,5 +21,7 @@ del recipe_main4
 del recipe_main5
 
 # recipe_main1.rename(columns={'Before':'After'})
+for idx in range(len(recipe_main)):
+    recipe_main.loc[idx, "셰프"] = recipe_main.loc[idx, "셰프"].strip()
 print(recipe_main)
 recipe_main.to_csv(save_fname, encoding='utf-8')
