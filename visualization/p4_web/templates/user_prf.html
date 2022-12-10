@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<head>
+    <title>양초딩님, 안녕하세요!</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/user_prf.css') }}">
+    <script src="{{ url_for('static', filename = 'js/user_prf.js') }}"></script>
+    <script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <script>
+        $(document).ready(function(){
+            $('#recommend').click(function(){
+                var offset = $('#recommends_box').offset(); //선택한 태그의 위치를 반환
+                //animate()메서드를 이용해서 선택한 태그의 스크롤 위치를 지정해서 0.4초 동안 부드럽게 해당 위치로 이동함 
+                $('html, body, div').animate({scrollTop : offset.top - 100}, 400);
+            }); 
+        });
+    </script>
+    <!-- <script src="https://masonry.desandro.com/masonry.pkgd.min.js"></script> -->
+</head>
+<body>
+    <div class="center_frame">
+        <div id='menu' class="menu_frame">
+            <input class="menu_button" id='home' name='menu_btn' type="submit" value="홈" onclick="location.href='user_prf'"> <!-- onclick="changeHome()" -->
+            <input class="menu_button" id='recommend' name='menu_btn' type="submit" value="추천레시피">
+            <input class="menu_button" id='search' name='menu_btn' type="submit" value="검색" onclick="location.href='main'">
+            <input class="menu_button" id='logout' name='menu_btn' type="submit" value="로그아웃" onclick="location.href='login'">
+        </div>
+        <script>
+            var div2 = document.getElementsByClassName("menu_button");
+    
+            function handleClick(event) {
+                console.log(event.target);
+                // console.log(this);
+                // 콘솔창을 보면 둘다 동일한 값이 나온다
+    
+                console.log(event.target.classList);
+    
+                if (event.target.classList[1] === "clicked") {
+                    event.target.classList.remove("clicked");
+                } else {
+                    for (var i = 0; i < div2.length; i++) {
+                    div2[i].classList.remove("clicked");
+                    }
+    
+                    event.target.classList.add("clicked");
+                }
+            }
+    
+            function init() {
+                for (var i = 0; i < div2.length; i++) {
+                    div2[i].addEventListener("click", handleClick);
+                }
+            }
+    
+            init();
+        </script>
+        <div class='user_name_div'>
+            <span class='user_name'>
+                양초딩
+            </span>
+            님, 오늘도 맛있는 한끼 하세요! *말수정요망*
+        </div>
+        <div class="chart">
+            <table>
+                <tr>
+                    <td>지금까지 사용한 <b>재료들</b>이에요!</td>
+                    <td>지금까지 사용한 <b>방법들</b>이에요!</td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="bar_space">
+                            <div class="for_padding">
+                                <table class="bar_table">
+                                    <tr>
+                                        <td>소고기</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="beef" class="progress">5</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>돼지고기</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="pork" class="progress">2</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>닭고기</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="chicken" class="progress">1</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>채소류</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="veg" class="progress">46</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>해물류</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="seafood" class="progress">2</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>달걀/유제품</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="egg" class="progress">9</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>건어물류</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="fish" class="progress">15</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>버섯류</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="mushroom" class="progress">10</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>과일류</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="fruit" class="progress">1</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="bar_space">
+                            <div class="for_padding">
+                                <table class="bar_table">
+                                    <tr>
+                                        <td>볶음</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="fry" class="progress">41</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>조림</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="boil_long" class="progress">21</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>부침</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="griddle" class="progress">7</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>무침</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="season" class="progress">18</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>절임</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="salt" class="progress">1</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>굽기</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="baking" class="progress">1</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>찜</td>
+                                        <td>
+                                            <div class="progress-bar">
+                                                <div id="steam" class="progress">2</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div id='recommends_box' class='recommends_box'>
+            <div class='recomend_main_title'>
+                양초딩 님께 오늘의 레시피 추천해드려요!
+            </div>
+            <div class='recomend_title'>
+                양초딩 님이 자주 요리하신 <b>'채소 볶음'</b> 요리를 추천해드려요!
+            </div>
+            <div class='recommend_recipes'>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6877896">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2017/10/14/7804733868375a0baef063db54e8f6651.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>볶음김치 황금레시피 김치볶음 밑반찬</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#김치요리</span>
+                                    <span class='hashtag_box'>#신김치</span>
+                                    <span class='hashtag_box'>#김치</span>
+                                    <span class='hashtag_box'>#볶음김치</span>
+                                    <span class='hashtag_box'>#김치볶음</span>
+                                    <span class='hashtag_box'>#초간단</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 1,003,270</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6917883">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2019/08/21/f51404dc513ccc76be4b5668f5dd350b1.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>맛있는 밑반찬 백종원 가지볶음</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#가지</span>
+                                    <span class='hashtag_box'>#볶음</span>
+                                    <span class='hashtag_box'>#가지볶음</span>
+                                    <span class='hashtag_box'>#밑반찬</span>
+                                    <span class='hashtag_box'>#반찬</span>
+                                    <span class='hashtag_box'>#밥반찬</span>
+                                    <span class='hashtag_box'>#백종원</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 694,216</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6871953">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2017/06/29/859353599938ad5c66b4803ea56509541.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>【스팸감자볶음만들기】</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#감자요리</span>
+                                    <span class='hashtag_box'>#감자조림</span>
+                                    <span class='hashtag_box'>#초간단</span>
+                                    <span class='hashtag_box'>#인기반찬</span>
+                                    <span class='hashtag_box'>#인기메뉴</span>
+                                    <span class='hashtag_box'>#저녁메뉴</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 548,374</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6857611">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2016/09/28/e6921cf2f60f7e45ff3749170b04d27a1.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>매콤 호박볶음, 비빔밥과 국수에 넣어먹으면 좋은 호박볶음</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#애호박볶음</span>
+                                    <span class='hashtag_box'>#비빔밥</span>
+                                    <span class='hashtag_box'>#호박</span>
+                                    <span class='hashtag_box'>#매콤볶음</span>
+                                    <span class='hashtag_box'>#초간단</span>
+                                    <span class='hashtag_box'>#초스피드</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 261,579</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class='recomend_title'>
+                양초딩 님이 리뷰에 작성신 단어 <b>'아이'</b> 기반 추천해드려요!
+            </div>
+            <div class='recommend_recipes'>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6895723">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2018/09/12/87c098dbfe15fd8a9e4e092ae98983291.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>생선 없이도 깊은 맛이 나는 '백종원 무조림' 레시피</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#백종원무조림</span>
+                                    <span class='hashtag_box'>#백종원레시피</span>
+                                    <span class='hashtag_box'>#백종원요리</span>
+                                    <span class='hashtag_box'>#무조림</span>
+                                    <span class='hashtag_box'>#백종원반찬</span>
+                                    <span class='hashtag_box'>#밥도둑</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 595,068</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6850115">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2016/06/25/5c69c55183afa9c4cf1be4e417668a031.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>백선생표 감자전</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#감자전</span>
+                                    <span class='hashtag_box'>#감자요리</span>
+                                    <span class='hashtag_box'>#감자</span>
+                                    <span class='hashtag_box'>#제철요리</span>
+                                    <span class='hashtag_box'>#술안주</span>
+                                    <span class='hashtag_box'>#백선생표감자전</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 474,526</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6908260">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2019/03/12/d67c4f1d0ffdc510758f86b8bb324a791.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>장조림 만드는 법, 소고기 장조림, 계란 달걀 장조림</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#장조림</span>
+                                    <span class='hashtag_box'>#소고기장조림</span>
+                                    <span class='hashtag_box'>#계란</span>
+                                    <span class='hashtag_box'>#달걀</span>
+                                    <span class='hashtag_box'>#계란장조림</span>
+                                    <span class='hashtag_box'>#달걀장조림</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 357,159</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6854680">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2016/08/16/f5c6e9b2f21d50a987dcf70542564dbf1.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>매콤 달콤 맛있는 황태채무침 만드는 법</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#황태채</span>
+                                    <span class='hashtag_box'>#무침</span>
+                                    <span class='hashtag_box'>#초간단</span>
+                                    <span class='hashtag_box'>#요리</span>
+                                    <span class='hashtag_box'>#무침</span>
+                                    <span class='hashtag_box'>#양념만들기</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 219,098</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class='recomend_title'>
+                양초딩 님이 리뷰에 작성신 단어 <b>'압력솥'</b> 기반 추천해드려요!
+            </div>
+            <div class='recommend_recipes'>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6856459">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2016/09/05/fa6cf367b58cdfb43fc9efb55fc1b9c01.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>맛있는 반찬 단호박 견과류 조림~!</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#초간단</span>
+                                    <span class='hashtag_box'>#밑반찬</span>
+                                    <span class='hashtag_box'>#아이반찬</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 130,421</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6858655">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2016/10/19/a6d49e15f105812d2de1dfd02dfa4f3e1.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>[간단 자취요리] 달달~짭짤~ 밥도둑! 돼지고기 장조림 만들기 / 자취생 저장식량</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#얌무</span>
+                                    <span class='hashtag_box'>#장조림</span>
+                                    <span class='hashtag_box'>#돼지고기장조림</span>
+                                    <span class='hashtag_box'>#돼지고기</span>
+                                    <span class='hashtag_box'>#자취</span>
+                                    <span class='hashtag_box'>#자취음식</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 60,077</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/5346372">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2015/03/19/c81beb1bed0a4a5afb4121f8454760581.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>계란 새우볶음 만들기</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#계란</span>
+                                    <span class='hashtag_box'>#새우</span>
+                                    <span class='hashtag_box'>#볶음</span>
+                                    <span class='hashtag_box'>#계란새우볶음</span>
+                                    <span class='hashtag_box'>#부추</span>
+                                    <span class='hashtag_box'>#아기</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 50,362</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/recipe/6857833">
+                        <div class='recommend_box'>
+                            <img class='recommend_recipe_img' src='https://recipe1.ezmember.co.kr/cache/recipe/2016/10/04/c72f8b9d7c420e3b0b5af19dfbe2c8911.jpg'>
+                            <div class='recommend_recipe_summary'>
+                                <div class='title'>전복장조림~*</div>
+                                <div class='hashtag_space'>
+                                    <span class='hashtag_box'>#스테미너</span>
+                                    <span class='hashtag_box'>#전복</span>
+                                    <span class='hashtag_box'>#조림</span>
+                                    <span class='hashtag_box'>#초간단</span>
+                                    <span class='hashtag_box'>#해산물</span>
+                                    <span class='hashtag_box'>#손님초대음식</span>
+                                </div>
+                                <div class='views'><i class="fa fa-eye"></i> 42,495</div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class='recomend_title'>
+                양초딩 님의 데이터 기반으로 <b>셰프</b>를 추천해드려요!
+            </div>
+            <div class='recommend_recipes'>
+                <div class='recommend_padding'>
+                    <a href="https://www.10000recipe.com/profile/recipe.html?uid=62929808">
+                        <div class='recommend_chef_box'>
+                            <table>
+                                <tr>
+                                    <td rowspan='3'><img class='recommend_chef_img' src='https://recipe1.ezmember.co.kr/cache/rpf/2021/03/16/5960029083841325a01b28de41dd27021.jpg'></td>
+                                    <td><span class='recommend_chef_name' style='vertical-align: bottom;'>요알남Mingstar</span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <div class='hashtag_space'>
+                                            <span class='hashtag_box'>#반찬</span>
+                                            <span class='hashtag_box'>#초간단</span>
+                                            <span class='hashtag_box'>#일상</span>
+                                            <span class='hashtag_box'>#밑반찬</span>
+                                        </div>
+                                        <div class='hashtag_space'>
+                                            <span class='hashtag_box'>#전</span>
+                                            <span class='hashtag_box'>#튀김</span>
+                                            <span class='hashtag_box'>#볶음</span>
+                                            <span class='hashtag_box'>#무침</span>
+                                        </div>
+                                    </td>
+                                </tr>
+                            </table>
+                        </div>
+                    </a>
+                </div>
+                <div class='recommend_padding'>
+                    <div class='recommend_chef_box'>
+                        <table>
+                            <tr>
+                                <td rowspan='3'><img class='recommend_chef_img' src='https://recipe1.ezmember.co.kr/img/df/pf_100_100.png'></td>
+                                <td><span class='recommend_chef_name' style='vertical-align: bottom;'>혀니ㅋ</span></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <div class='hashtag_space'>
+                                        <span class='hashtag_box'>#밑반찬</span>
+                                        <span class='hashtag_box'>#맛보장</span>
+                                        <span class='hashtag_box'>#황금레시피</span>
+                                        <span class='hashtag_box'>#초간단</span>
+                                    </div>
+                                    <div class='hashtag_space'>
+                                        <span class='hashtag_box'>#아이반찬</span>
+                                        <span class='hashtag_box'>#요리초보</span>
+                                        <span class='hashtag_box'>#국민반찬</span>
+                                        <span class='hashtag_box'>#밥반찬</span>
+                                    </div>
+                                </td>
+                            </tr>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

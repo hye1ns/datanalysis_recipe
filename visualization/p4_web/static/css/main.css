@@ -1,0 +1,95 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0 auto;
+    background-color: rgb(198, 201, 252);
+    /* align-items: center; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow: scroll;
+    padding-top: 30px;
+    float: left;
+    width: 1000px;
+}
+
+/* menu_frame */
+.menu_frame {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgb(198, 201, 252);
+}
+
+/* menu_button */
+.menu_button {
+    font-size: 18px;
+    font-family: 'GmarketSansMedium';
+    color:rgb(110, 85, 124);
+    background-color: rgb(198, 201, 252);
+    letter-spacing: 0.5px;
+    border: 0;
+    outline: 0;
+    padding: 3em 3.5em 2em 3.5em;
+    cursor: pointer;
+}
+.menu_button:hover {  /* 마우스 올렸을 때 */
+    color: rgb(56, 43, 63);
+}
+.menu_button:active {  /* 마우스 클릭하고 있을 때 */
+    color:rgb(159, 124, 179);
+}
+.clicked {
+    color: rgb(0, 0, 0);
+}
+
+
+.search_form {
+    width: 800px;
+    height: 70%;
+    margin: 0 auto;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 50% - 200px;
+}
+
+.search_form i {
+    padding: 0 18px 0 0;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+#btn_form {
+    padding: 0 0 0 20px;
+}
+
+#button1 {
+    font-family: 'GmarketSansMedium';
+    height: 60px;
+    width: 60px;
+    color: white;
+    background-color: rgb(60, 44, 75);
+    border-radius: 20%;
+}
+
+#search_keyword {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    width: 500px;
+    height: 60px;
+    font-size: 20px;
+    border-color: rgb(160, 160, 160);
+}

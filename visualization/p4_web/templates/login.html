@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<head>
+    <title>recipe_login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/login.css') }}">
+</head>
+<body>
+    <form action='/user_prf' method='POST'>
+        <div class='login_div'>
+            <table>
+                <tr>
+                    <td><label for="login_id">ID</label></td>
+                    <td><input type='text' id='login_id' name='login_id'></td>
+                </tr>
+                <tr>
+                    <td><label for="login_pwd">Password</label></td>
+                    <td><input type='password' id='login_pwd' name='login_pwd'></td>
+                </tr>
+                <tr>
+                    <td colspan='2' style="text-align:center"><button type='submit' class='login_btn'>Login</button></td>
+                </tr>
+            </table>
+        </div>
+    </form>
+</body>
+</html>
