@@ -1,0 +1,56 @@
+<!doctype html>
+<head>
+    <title>검색</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <!-- <link rel="stylesheet" href="../static/css/main.css"> -->
+</head>
+<body>
+    <div class="search_form">
+        <div class="menu_frame">
+            <input class="menu_button" id='home' name='menu_btn' type="submit" value="홈" onclick="location.href='user_prf'"> <!-- onclick="changeHome()" -->
+            <input class="menu_button" id='recommend' name='menu_btn' type="submit" value="추천레시피">
+            <input class="menu_button" id='search' name='menu_btn' type="submit" value="검색" onclick="location.href='main'">
+            <input class="menu_button" id='logout' name='menu_btn' type="submit" value="로그아웃" onclick="location.href='login'">
+        </div>
+        <script>
+            var div2 = document.getElementsByClassName("menu_button");
+    
+            function handleClick(event) {
+                console.log(event.target);
+                // console.log(this);
+                // 콘솔창을 보면 둘다 동일한 값이 나온다
+    
+                console.log(event.target.classList);
+    
+                if (event.target.classList[1] === "clicked") {
+                    event.target.classList.remove("clicked");
+                } else {
+                    for (var i = 0; i < div2.length; i++) {
+                    div2[i].classList.remove("clicked");
+                    }
+    
+                    event.target.classList.add("clicked");
+                }
+            }
+    
+            function init() {
+                for (var i = 0; i < div2.length; i++) {
+                    div2[i].addEventListener("click", handleClick);
+                }
+            }
+    
+            init();
+        </script>
+        <form action="/search1" method="POST">
+            <div id='center_frame'>
+                <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="search_keyword" name="search_keyword">
+                <span id='btn_form'>
+                    <button type='submit' id='button1'>검색</button>
+                </span>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
