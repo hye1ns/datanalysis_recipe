@@ -1,6 +1,7 @@
 import ast
 import numpy as np
 import pandas as pd
+import matplotlib.pyplot as plt
 
 from gensim.models.word2vec import Word2Vec
 
@@ -12,8 +13,19 @@ pd.set_option('display.max_columns', None)
 # recipe_review = pd.read_csv('../p2_data_preprocessing/data/recipe_review_preprocessing_1207.csv').iloc[:, 1:]
 recipe_main = pd.read_csv('../p2_data_preprocessing/data/recipe_main_preprocessing_1207.csv').iloc[:, 1:]
 # review_w2v_model = Word2Vec.load('./save_model/review_w2v')
-hashtag_w2v_model = Word2Vec.load('./save_model/hashtag_w2v')
-# recipe_clustering = pd.read_csv('./data/recipe_main_clustering_221208.csv').iloc[:, 1:]
+# hashtag_w2v_model = Word2Vec.load('./save_model/hashtag_w2v')
+recipe_clustering = pd.read_csv('./data/recipe_main_clustering_221208.csv').iloc[:, 1:]
+
+# [cluster label을 recipe_main에 concat(재료별, 방법별을 보기 위해)]
+recipe_main_group = pd.concat([recipe_main, recipe_clustering['cluster_label']], axis=1)
+group_count = recipe_main_group.loc[:, ['index', '재료별', '방법별', 'cluster_label']].groupby(['cluster_label', '재료별', '방법별']).count().sort_values(by=['index'], ascending=False)
+group_count = group_count[group_count['index'] > 50]
+print(group_count)
+print(len(group_count))
+exit()
+plt.bar(group_count.index, group_count['index'])
+plt.show()
+exit()
 
 # [키워드 '캠핑장'과 유사한 단어 -> 마늘쫑새우볶음, 굴못먹는경우, 금체질, 과일김치, 티아민, 식초마늘장아찌, 저렴한, 꼬막볶음]
 # [키워드 '인덕션요리'와 유사한 단어 -> 치킨무, 추석음식, 동그랑땡, 윤기나는, 부추무침, 동태전, 방울토마토, 이끌림밥상, 김치전]

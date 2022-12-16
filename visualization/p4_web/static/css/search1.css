@@ -23,6 +23,12 @@ a {
     color: inherit;  /* 링크 색상 제거 */
 }
 
+.body-wrapper {
+    min-height: 100%;
+    position: relative;
+    text-align: center;
+}
+
 /* menu_frame */
 .menu_frame {
     width: 100%;
@@ -147,4 +153,25 @@ a {
 .hashtag_box {
     background-color: bisque;
     border-radius: 20%;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    /* padding-top: 650px; */
+    z-index: -100;
+    text-align: center;
+}
+#footer_box {
+    margin: 0 auto;
+    align-items: bottom;
+    display: flex;
+    justify-content: center;
+    padding: 0 100px 0 100px;
+}
+.footer_font {
+    font-style: italic;
+    font-family: 'GmarketSansMedium';
+    font-size: 13px;
 }

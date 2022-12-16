@@ -40,12 +40,12 @@ print()
 print(method_df)
 plt.bar(ing_df['재료'], ing_df['count'])
 plt.show()
-plt.bar(method_df['방법'], ing_df['count'])
+plt.bar(method_df['방법'], method_df['count'])
 plt.show()
 exit()
 
 # [가장 많은 리뷰를 작성한 닉네임]
-recipe_review_nickname = recipe_review.loc[:, ['index', '닉네임']].groupby(['닉네임']).count().sort_values('index')
+recipe_review_nickname = recipe_review.loc[:, ['index', '닉네임']].groupby(['닉네임']).count().sort_values(by=['index'], ascending=False)
 print(recipe_review_nickname)
 exit()
 '''

@@ -6,7 +6,8 @@
     <!-- <link rel="stylesheet" href="../static/css/main.css"> -->
 </head>
 <body>
-    <div class="search_form">
+    <div class='body-wrapper'>
+    <div class="center_frame">
         <div class="menu_frame">
             <input class="menu_button" id='home' name='menu_btn' type="submit" value="홈" onclick="location.href='user_prf'"> <!-- onclick="changeHome()" -->
             <input class="menu_button" id='recommend' name='menu_btn' type="submit" value="추천레시피">
@@ -43,7 +44,7 @@
             init();
         </script>
         <form action="/search1" method="POST">
-            <div id='center_frame'>
+            <div class='search_form'>
                 <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
                 <input type="text" id="search_keyword" name="search_keyword">
                 <span id='btn_form'>
@@ -51,6 +52,14 @@
                 </span>
             </div>
         </form>
+    </div>
+    <footer>
+        <div id='footer_box'>
+            <br><br><br><br><br><br>
+            <p class='footer_font'>© 2022 Copyright : 서울여자대학교 빅데이터분석및활용 &lt;‘만개의 레시피’ 데이터를 활용한 추천 시스템
+                - 레시피와 리뷰를 중심으로 -&gt;</p>
+        </div>
+    </footer>
     </div>
 </body>
 </html>
