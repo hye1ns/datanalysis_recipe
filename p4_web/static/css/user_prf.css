@@ -1,0 +1,237 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    margin: 0 auto;
+    background-color: rgb(198, 201, 252);
+    /* width: 1000px; */
+    padding: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow: scroll;
+    padding-top: 100px;
+}
+table {
+    font-family: 'GmarketSansMedium';
+}
+a {
+    text-decoration: none;
+    color: inherit;  /* 링크 색상 제거 */
+}
+
+.body-wrapper {
+    min-height: 100%;
+    position: relative;
+}
+
+/* menu_frame */
+.menu_frame {
+    width: 100%;
+    text-align: center;
+    /* display: inline-block; */
+    float: left;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgb(198, 201, 252);
+}
+
+/* menu_button */
+.menu_button {
+    font-size: 18px;
+    font-family: 'GmarketSansMedium';
+    color:rgb(110, 85, 124);
+    background-color: rgb(198, 201, 252);
+    letter-spacing: 0.5px;
+    border: 0;
+    outline: 0;
+    padding: 3em 3.5em 2em 3.5em;
+    cursor: pointer;
+}
+.menu_button:hover {  /* 마우스 올렸을 때 */
+    color: rgb(56, 43, 63);
+}
+.menu_button:active {  /* 마우스 클릭하고 있을 때 */
+    color:rgb(159, 124, 179);
+}
+.clicked {
+    color: rgb(0, 0, 0);
+}
+
+.center_frame {
+    width: 1000px;
+    align-items: center;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+}
+.user_name_div {
+    padding: 30px 0;
+    font-family: 'GmarketSansMedium';
+    font-size: 20px;
+}
+.user_name {
+    font-size: 33px;
+}
+
+.progress-bar {
+    width: 280px; /* bar_space 지금 400px */
+    height: 25px;
+    /* background-color: #dedede; */
+    font-weight: 600;
+    font-size: .8rem;
+    margin-bottom: 1rem;
+}
+.progress-bar .progress {
+    width: 0;
+    height: 25px;
+    padding: 0;
+    background-color: rgb(114, 81, 156);
+    color: white;
+    text-align: right;
+    font-family: 'GmarketSansMedium';
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.chart {
+    padding: 50px;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    font-size: 15px;
+}
+.chart b {
+    font-size: 18px;
+}
+.bar_space {
+    width: 400px;
+    height: 450px;
+    background-color: white;
+    border: 1px solid black;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.for_padding {
+    padding: 10px 25px;
+    
+}
+.bar_table {
+    width: 100%;
+    font-size: 11px;
+}
+.bar_table tr, td {
+    vertical-align: middle;
+}
+
+
+.recommends_box {
+    font-family: 'GmarketSansMedium';
+    width: 100%;
+}
+.recomend_main_title {
+    padding: 50px;
+    font-size: 22px;
+}
+.recomend_title {
+    font-size: 15px;
+}
+.recomend_title b {
+    font-size: 19px;
+}
+.recommend_recipes {
+    padding: 5px 0 50px 0;
+    float: left;
+    display: flex;
+}
+.recommend_padding {
+    padding: 5px;
+}
+.recommend_box {
+    width: 240px;
+    height: 300px;
+    background-color: white;
+}
+.recommend_chef_box {
+    width: 490px;
+    height: 200px;
+    background-color: white;
+    display: flex;
+    float: left;
+    justify-content: center;
+    align-items: center;
+}
+.recommend_chef_box table {
+    padding: 10px 0;
+}
+
+.recommend_recipe_img {
+    object-fit: cover;
+    width: 200px;
+    padding: 20px;
+    overflow: hidden;
+    height: 41%;
+}
+.recommend_recipe_summary {
+    padding: 0 10px;
+}
+.recommend_recipe_summary .title {
+    font-size: 16px;
+    text-decoration: underline;
+}
+.recommend_recipe_summary .views {
+    font-size: 12px;
+    vertical-align: bottom;
+}
+
+.hashtag_space {
+    padding: 10px;
+    font-size: 13px;
+}
+.hashtag_box {
+    background-color: bisque;
+    border-radius: 20%;
+}
+
+.recommend_chef_img {
+    object-fit: cover;
+    width: 120px;
+    height: 120px;
+    border-radius: 100%;
+    padding: 20px;
+    overflow: hidden;
+
+}
+.recommend_chef_name {
+    font-size: 20px;
+    padding: 50px;
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    z-index: -100;
+}
+#footer_box {
+    margin: 0 auto;
+    align-items: bottom;
+    display: flex;
+    justify-content: center;
+    padding: 0 100px 0 100px;
+}
+.footer_font {
+    font-style: italic;
+    font-family: 'GmarketSansMedium';
+    font-size: 13px;
+}

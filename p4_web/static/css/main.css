@@ -1,0 +1,132 @@
+@font-face {
+    font-family: 'GmarketSansMedium';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2001@1.1/GmarketSansMedium.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+body {
+    margin: 0 auto;
+    background-color: rgb(198, 201, 252);
+    /* align-items: center; */
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    overflow: scroll;
+    padding-top: 30px;
+    align-items: center;
+}
+
+.body-wrapper {
+    min-height: 100%;
+    position: relative;
+    text-align: center;
+}
+
+/* menu_frame */
+.menu_frame {
+    width: 100%;
+    text-align: center;
+    display: inline-block;
+    justify-content: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background-color: rgb(198, 201, 252);
+    z-index: 10000;
+}
+
+/* menu_button */
+.menu_button {
+    font-size: 18px;
+    font-family: 'GmarketSansMedium';
+    color:rgb(110, 85, 124);
+    background-color: rgb(198, 201, 252);
+    letter-spacing: 0.5px;
+    border: 0;
+    outline: 0;
+    padding: 3em 3.5em 2em 3.5em;
+    cursor: pointer;
+}
+.menu_button:hover {  /* 마우스 올렸을 때 */
+    color: rgb(56, 43, 63);
+}
+.menu_button:active {  /* 마우스 클릭하고 있을 때 */
+    color:rgb(159, 124, 179);
+}
+.clicked {
+    color: rgb(0, 0, 0);
+}
+
+.center_frame {
+    width: 1000px;
+    align-items: center;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+}
+
+.search_form {
+    width: 800px;
+    height: 70%;
+    margin: 0 auto;
+    align-items: center;
+    display: inline-block;
+    justify-content: center;
+    position: absolute;
+    /* text-align: center; */
+    left: 120px;
+    /* left: 0px; */
+    padding-top: 230px;
+}
+
+.search_form i {
+    padding: 0 18px 0 0;
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+}
+
+#btn_form {
+    padding: 0 0 0 20px;
+}
+
+#button1 {
+    font-family: 'GmarketSansMedium';
+    height: 60px;
+    width: 60px;
+    color: white;
+    background-color: rgb(60, 44, 75);
+    border-radius: 20%;
+}
+
+#search_keyword {
+    border-style: solid;
+    border-radius: 5px;
+    border-width: 2px;
+    width: 500px;
+    height: 60px;
+    font-size: 20px;
+    border-color: rgb(160, 160, 160);
+}
+
+footer {
+    width: 100%;
+    position: absolute;
+    display: flex;
+    padding-top: 650px;
+    z-index: -100;
+    text-align: center;
+}
+#footer_box {
+    margin: 0 auto;
+    align-items: bottom;
+    display: flex;
+    justify-content: center;
+    padding: 0 100px 0 100px;
+}
+.footer_font {
+    font-style: italic;
+    font-family: 'GmarketSansMedium';
+    font-size: 13px;
+}

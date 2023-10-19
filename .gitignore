@@ -1,0 +1,15 @@
+# virtual environment
+.venv
+
+# python cache (error 방지)
+__pycache__
+__pycache__/
+
+# khaiii : https://github.com/kakao/khaiii
+khaiii
+
+# pykospacing: https://github.com/haven-jeon/PyKoSpacing
+# PyKoSpacing
+
+# hanspell: https://github.com/ssut/py-hanspell
+py-hanspell
