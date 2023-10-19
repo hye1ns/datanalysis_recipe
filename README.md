@@ -13,6 +13,27 @@
 * 개인 맞춤화된 시각화와 추천 제공을 통한 이용자 만족도 강화
 * 고객 데이터 분석과 이용자 행동 분석 가능
 
+## Tech
+<div>
+<img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+<img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+<img src="https://img.shields.io/badge/javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+<img src="https://img.shields.io/badge/jquery-0769AD?style=for-the-badge&logo=jquery&logoColor=white">
+</div>
+
+
+<div>
+<img src="https://img.shields.io/badge/python-3776AB?style=for-the-badge&logo=python&logoColor=white">
+<img src="https://img.shields.io/badge/flask-000000?style=for-the-badge&logo=flask&logoColor=white">
+<img src="https://img.shields.io/badge/docker-2496ED?style=for-the-badge&logo=docker&logoColor=white">
+</div>
+
+<div>
+<img src="https://img.shields.io/badge/nginx-0?style=for-the-badge&logo=nginx&logoColor=white">
+<img src="https://img.shields.io/badge/linux-FCC624?style=for-the-badge&logo=linux&logoColor=black">
+<img src="https://img.shields.io/badge/oracle-F80000?style=for-the-badge&logo=oracle&logoColor=white">
+</div>
+
 ## 데이터 수집
 * '[만개의 레시피](https://www.10000recipe.com/)' 사이트 크롤링
 * 레시피 dataframe / 리뷰 dataframe 총 두 개의 dataframe으로 크롤링 저장
