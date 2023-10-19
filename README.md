@@ -36,7 +36,7 @@
 
 ## 데이터 수집
 * '[만개의 레시피](https://www.10000recipe.com/)' 사이트 크롤링
-* 레시피 dataframe / 리뷰 dataframe 총 두 개의 dataframe으로 크롤링 저장
+* 레시피 dataframe / 리뷰 dataframe &rarr; 총 두 개의 dataframe으로 크롤링 저장
 
 ### recipe_main.csv 데이터 타입
 * columns 총 개수: 16개
@@ -74,13 +74,13 @@
 
 ## 데이터 탐색
 <div style="text-align:center;">
-    <img src='./src/pic1.png' width=400px>
+    <img src='./src/pic1.png' width=600px>
 </div>
 <div style="text-align:center;">
-    <img src='./src/pic2.png' width=400px>
+    <img src='./src/pic2.png' width=600px>
 </div>
 <div style="text-align:center;">
-    <img src='./src/pic3.png' width=400px>
+    <img src='./src/pic3.png' width=600px>
 </div>
 
 ## 리뷰 데이터
@@ -92,7 +92,7 @@
 
 ### 모델링
 <div style="text-align:center;">
-    <img src='./src/pic4.png' width=600px>
+    <img src='./src/pic4.png' width=800px>
 </div>
 
 ### 결과
