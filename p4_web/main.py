@@ -20,7 +20,7 @@ def user_prf():
         login_id = request.form['login_id']
         login_pwd = request.form['login_pwd']
         if login_id=='admin' and login_pwd=='1234':
-            nickname = '양초딩'
+            nickname = '슈니'
             return render_template('user_prf.html', nickname = nickname)
         else:
             flash('다시 입력해주세요.')
