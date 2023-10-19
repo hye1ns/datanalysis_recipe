@@ -3,7 +3,7 @@
 ## 프로젝트 배경
 * 브랜드관 쉐프
     * 상업형 모델인 브랜드관 쉐프는 기존 일반 사용자들의 커뮤니티에서 상업형 모델로 확장된 형태
-    * 브랜드관 쉐프에 입점한 쉐프들은 자유롭고 독립적인 마케팅을 할 수 있으나, 추가 홍보 방법은 유료로 진행 가능. → 장기적인 관점에서 이용자의 이탈 초래
+    * 브랜드관 쉐프에 입점한 쉐프들은 자유롭고 독립적인 마케팅을 할 수 있으나, 추가 홍보 방법은 유료로 진행 가능. &rarr; 장기적인 관점에서 이용자의 이탈 초래
 * 이용자 맞춤 시각화 부족
     * 홈페이지 내 이용자가 자신의 정보를 확인할 수 있는 MY홈에 접근했을 경우, 레시피, 요리후기, 댓글 등을 보여주나 이를 조금 더 발전시키고자 함
     * 이용자 맞춤 레시피, 쉐프 등을 추천해주는 시각화를 추가하고, 이용자 행태에 맞춰 개인화된 맞춤 서비스 제공
@@ -52,3 +52,52 @@
 |내용|str|후기|
 
 ## 데이터 탐색
+<div style="text-align:center;">
+    <img src='./src/pic1.png' width=400px>
+</div>
+<div style="text-align:center;">
+    <img src='./src/pic2.png' width=400px>
+</div>
+<div style="text-align:center;">
+    <img src='./src/pic3.png' width=400px>
+</div>
+
+## 리뷰 데이터
+### 전처리
+1. [PyKoSpacing](https://github.com/haven-jeon/PyKoSpacing)을 이용한 리뷰 띄어쓰기 교정
+2. [Hanspell](https://github.com/ssut/py-hanspell)을 이용한 한국어 맞춤법 교정
+3. [Khaiii](https://github.com/kakao/khaiii)를 이용한 POS Tagging (형태소 분석)
+3. POS Tagging된 리뷰 데이터에서 불용어 제거 &rarr; 필요 형태소 추출 &rarr; 토큰화
+
+### 모델링
+<div style="text-align:center;">
+    <img src='./src/pic4.png' width=600px>
+</div>
+
+### 결과
+
+## 레시피 데이터
+### 전처리
+1. 조회수, 조리시간 columns : str &rarr; int
+2. 난이도 column &rarr; 서열처도로 변환  
+    {NaN, 아무나, 초급, 중급, 고급, 신의경지} &rarr; {0, 1, 2, 3, 4, 5}
+3. 재료별, 방법별 columns &rarr; one-hot encoding
+
+### 모델링
+* clustering
+
+### 결과
+
+## 레시피 해시태그 데이터
+### 전처리
+1. 특수문자 제거
+2. 문장으로 작성된 해시태그 &rarr; 띄어쓰기로 나누어 단어 단위로 저장
+
+### 모델링
+* word2vec을 통해 embedding 진행
+* word2vec에서 제공하는 유사도 기반으로 검색 엔진 발전
+    * 사용자가 검색한 키워드만 검색되는 것이 아니라, 그 단어와 가장 유사한 단어에 대한 레시피도 보여줌
+
+### 결과
+
+
