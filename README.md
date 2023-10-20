@@ -91,11 +91,16 @@
 3. POS Tagging된 리뷰 데이터에서 불용어 제거 &rarr; 필요 형태소 추출 &rarr; 토큰화
 
 ### 모델링
+* word2vec을 통해 embedding 진행
 <div style="text-align:center;">
     <img src='./src/pic4.png' width=800px>
 </div>
 
 ### 결과
+<div style="text-align:center;">
+    <img src='./src/pic5.jpg' width=800px>
+</div>
+
 
 ## 레시피 데이터
 ### 전처리
@@ -105,9 +110,13 @@
 3. 재료별, 방법별 columns &rarr; one-hot encoding
 
 ### 모델링
-* clustering
+* clustering으로 유사한 특징을 가진 레시피 그룹화
 
 ### 결과
+<div style="text-align:center;">
+    <img src='./src/pic6.png' width=800px>
+</div>
+
 
 ## 레시피 해시태그 데이터
 ### 전처리
@@ -120,5 +129,29 @@
     * 사용자가 검색한 키워드만 검색되는 것이 아니라, 그 단어와 가장 유사한 단어에 대한 레시피도 보여줌
 
 ### 결과
+<div style="text-align:center;">
+    <img src='./src/pic7.jpg' width=800px>
+</div>
 
+## 시연
+```
+cd p4_web
 
+# [맥 실행]
+export FLASK_APP=main.py && flask run
+
+# [윈도우 실행]
+set FLASK_APP=main && $env:FLASK_APP = "main.py" && flask run 
+```
+* 로그인
+    * id: admin
+    * pwd: 1234
+<div style="text-align:center;">
+    <img src='./src/res1.png' width=800px>
+</div>
+<div style="text-align:center;">
+    <img src='./src/res2.png' width=800px>
+</div>
+<div style="text-align:center;">
+    <img src='./src/res3.png' width=800px>
+</div>
